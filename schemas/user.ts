@@ -1,8 +1,7 @@
 import mongoose = require('mongoose');
-import mongodb = require('mongodb');
 
 const User = new mongoose.Schema({
-  userId: mongodb.ObjectID,
+  userId: mongoose.Schema.Types.ObjectId,
   username: String,
   password: String,
 });

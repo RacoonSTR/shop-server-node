@@ -1,10 +1,9 @@
 import mongoose = require('mongoose');
-import mongodb = require('mongodb');
 
 const Board = new mongoose.Schema({
-    boardId: mongodb.ObjectID,
+    boardId: mongoose.Schema.Types.ObjectId,
     title: String,
-    tasks: [mongodb.ObjectID]
+    tasks: [mongoose.Schema.Types.ObjectId]
 });
 
 module.exports = Board;
