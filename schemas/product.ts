@@ -4,7 +4,7 @@ const Product = new mongoose.Schema({
   productId: mongoose.Schema.Types.ObjectId,
   categoryId: mongoose.Schema.Types.ObjectId,
   title: String,
-  specs: [String] //TODO: Add specs
+  specs: [String] // TODO: Add specs
 });
 
 module.exports = Product;
