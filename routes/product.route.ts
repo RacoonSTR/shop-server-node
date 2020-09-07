@@ -5,9 +5,9 @@ const router: express.Router = express.Router();
 router.post('/', async (req, res) => {
     await ProductController
         .create({
-            categoryId: req.body.firstName,
-            title: req.body.lastName,
-            specs: req.body.email
+            categoryId: req.body.categoryId,
+            title: req.body.title,
+            specs: req.body.specs
         }).then(product => {
             return res.send({ product });
         }).catch(error => {

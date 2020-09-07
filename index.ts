@@ -1,8 +1,12 @@
-import express = require('express');
+import express from 'express';
+import bodyParser from 'body-parser';
 import db from './db/db';
 import route from './routes';
 
 const app: express.Application = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.listen(3000, async () => {
   console.log('App is listening on port 3000!');

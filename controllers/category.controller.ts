@@ -1,18 +1,16 @@
-import Product, { IProduct } from '../models/product.model';
+import Category, { ICategory } from '../models/category.model';
 import { CreateQuery } from 'mongoose';
 
 async function create({
-    categoryId,
     title,
     specs
-}: CreateQuery<IProduct>): Promise<IProduct> {
-    return Product
+}: CreateQuery<ICategory>): Promise<ICategory> {
+    return Category
         .create({
-            categoryId,
             title,
             specs
         })
-        .then((data: IProduct) => {
+        .then((data: ICategory) => {
             return data;
         })
         .catch((error: Error) => {
@@ -20,10 +18,10 @@ async function create({
         });
 }
 
-async function getAll(): Promise<IProduct[]> {
-    return Product
+async function getAll(): Promise<ICategory[]> {
+    return Category
         .find({})
-        .then((data: IProduct[]) => {
+        .then((data: ICategory[]) => {
             return data;
         })
         .catch((error: Error) => {
@@ -31,10 +29,10 @@ async function getAll(): Promise<IProduct[]> {
         });
 }
 
-async function getById(id: string): Promise<IProduct | null> {
-    return Product
+async function getById(id: string): Promise<ICategory | null> {
+    return Category
         .findById(id)
-        .then((data: IProduct | null) => {
+        .then((data: ICategory | null) => {
             return data;
         })
         .catch((error: Error) => {
@@ -42,10 +40,10 @@ async function getById(id: string): Promise<IProduct | null> {
         });
 }
 
-async function deleteById(id: string): Promise<IProduct | null> {
-    return Product
+async function deleteById(id: string): Promise<ICategory | null> {
+    return Category
         .findByIdAndDelete(id)
-        .then((data: IProduct | null) => {
+        .then((data: ICategory | null) => {
             return data;
         })
         .catch((error: Error) => {
